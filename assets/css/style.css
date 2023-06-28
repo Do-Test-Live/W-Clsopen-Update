@@ -23,6 +23,11 @@
   src: url('../fonts/Orbitron-Black.otf');
 }
 
+@font-face {
+  font-family: mechanismo;
+  src: url('../fonts/Mechanismo-Regular.otf');
+}
+
 body
 {
   margin: 0;
@@ -166,6 +171,113 @@ a:hover
   font-size: 22px;
 }
 
+.main{
+  margin-top: 300px;
+}
+
+.main-image-10sec{
+  margin-bottom: 100px;
+}
+
+.progress-bar-text{
+  color: #ffffff;
+  font-size: 30px;
+  font-family: jura, sans-serif;
+}
+.progress {
+  margin: 20px auto;
+  padding: 0;
+  width: 90%;
+  height: 10px;
+  overflow: hidden;
+  background: #00ffe4;
+  border-radius: 6px;
+}
+
+.bar {
+  position:relative;
+  float:left;
+  min-width:1%;
+  height:100%;
+  background:#001eff;
+}
+
+.percent {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  margin:0;
+  font-family:tahoma,arial,helvetica;
+  font-size:12px;
+  color:white;
+}
+
+nav{
+  background-color: #030205;
+  padding: 20px 20px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+  margin-bottom: -3rem;
+}
+
+nav li {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Adjust the value to set the desired gap between elements */
+}
+
+nav li img {
+  max-height: 100%; /* Ensure the images don't exceed the height of the li element */
+  transform: translateY(-50%); /* Vertically center the smaller items within the li */
+}
+
+.blind-box {
+  margin: 100px 50px;
+  background-color: #3d17af80;
+  border: 5px solid #a94e96;
+  border-radius: 50px;
+}
+.blind-box-row-image{
+  padding: 75px 0 25px 0;
+}
+.blind-box-text{
+  font-size: 25px;
+  color: #ffffff;
+  font-family: jura, sans-serif;
+}
+
+.diy-blind-box{
+  margin: 0 40px 100px 40px;
+  border: 10px solid #c1c4cb;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+.diy-blind-box-text{
+  font-family: mechanismo, sans-serif;
+  color: #ffffff;
+  font-size: 60px;
+  margin-top: 32px;
+  margin-left: -25px;
+}
+
+.diy-blind-box-heading{
+  font-size: 40px;
+  color: white;
+  font-family: mechanismo, sans-serif;
+}
+
+.diy-blind-box-subheading{
+  font-size: 30px;
+  color: #ff5dea;
+}
 /*
  * And let's fade it in from the left
  */
@@ -181,6 +293,7 @@ a:hover
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
   }
+
 }
 @media only screen and (min-width: 600px) {
   .head-back{
@@ -188,7 +301,29 @@ a:hover
   }
   .navHeading-text{
     font-family: orbitron-bold;
-    font-size: 35px;
+    font-size: 30px;
     color: #ffffff;
+    padding: 30px;
+    margin-bottom: 0 !important;
+  }
+  .full-screen-button{
+    font-size: 30px;
+    padding: 17px 50px;
+    margin-right: 35px;
+    background: url('../images/10sec/Full-Screen.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: jura, sans-serif;
+  }
+  .logo-10sec{
+    margin-top: 35px;
+    margin-left: 35px;
+  }
+  .tap-screen{
+    color: #00ffe4;
+    font-size: 60px;
+    font-family: mechanismo, sans-serif;
+    text-transform: uppercase;
   }
 }
