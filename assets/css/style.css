@@ -172,7 +172,7 @@ a:hover
 }
 
 .main{
-  margin-top: 300px;
+  margin-top: 0 !important;
 }
 
 .main-image-10sec{
@@ -286,6 +286,88 @@ nav li img {
   transform: none;
   opacity: 1;
 }
+
+.banner-section-heading{
+  font-size: 60px;
+  color: white;
+  text-transform: uppercase;
+  font-family: Jura, sans-serif;
+  font-weight: bold;
+}
+
+.banner-section-heading-two{
+  font-size: 40px;
+  color: white;
+  text-transform: uppercase;
+  font-family: Jura, sans-serif;
+  padding: 20px 85px;
+  background-color: #2aa8b4;
+  border: 2px solid #6a088f;
+  border-radius: 40px;
+}
+
+.notice{
+  background-color: #7ec4eb;
+  border: 5px solid #3d113a;
+  border-radius: 60px;
+  margin: 0 20px;
+}
+
+.notice-text{
+  font-size: 20px;
+  color: #6026a6;
+  font-family: orbitron-bold,sans-serif;
+  padding-top: 9%;
+}
+
+.gift-box{
+  padding: 10px;
+  border: 10px solid blue;
+  border-radius: 20px;
+}
+
+.gift-box-text{
+  font-size: 40px;
+  color: white;
+  text-shadow: 5px 5px 5px #000000, -5px -5px 5px #000000, 5px -5px 5px #000000, -5px 5px 5px #000000;
+}
+
+.price-button{
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.feature-heading{
+  background-color: #f14c3e;
+}
+
+.feature-text{
+  font-size: 40px;
+  color: white;
+  text-transform: uppercase;
+  font-family: Jura, sans-serif;
+  padding: 20px 85px;
+  background-color: #f14c30;
+  border: 2px solid #6a088f;
+  border-radius: 40px;
+}
+
+.gift-name{
+  font-size: 30px;
+  color: white;
+  font-family: orbitron,sans-serif;
+}
+
+.price-gift{
+  font-size: 30px;
+  color: #00ffe4;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+
 
 @media screen and (max-width: 768px) {
   #menu {
