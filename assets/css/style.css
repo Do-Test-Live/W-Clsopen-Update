@@ -367,6 +367,65 @@ nav li img {
   font-weight: bold;
 }
 
+.content-main{
+  margin: 25px 25px 0 25px;
+  padding: 50px;
+  border: 5px solid #80139a;
+  border-top-left-radius: 50px 50px;
+  border-top-right-radius: 50px 50px;
+  background-color: #6413979e;
+}
+
+.content-heading-bg{
+  padding: 25px;
+  border: 3px solid transparent;
+  border-radius: 95px;
+  background-color: #100e6c7a;
+}
+
+.content-heading{
+  font-size: 50px;
+  color: #ffffff;
+  font-family: noto-bold, sans-serif;
+  text-shadow: rgba(0,178,227, 1) 0px 0px 20px;
+}
+
+.content-description{
+  font-size: 25px;
+  color: #ffffff;
+  font-family: noto, sans-serif;
+  font-weight: normal;
+  line-height: 50px;
+}
+
+.content-area-2{
+  margin: 0 25px 0 25px;
+  padding: 50px;
+  border: 5px solid #80139a;
+  background-color: #87157aa6;
+}
+
+.content-main-2{
+  margin: 0 25px 25px 25px;
+  padding: 50px;
+  border: 5px solid #80139a;
+  border-bottom-left-radius: 50px 50px;
+  border-bottom-right-radius: 50px 50px;
+  background-color: #6413979e;
+}
+
+.content-heading-1{
+  font-size: 50px;
+  color: #00d6ff;
+  font-family: noto-bold, sans-serif;
+}
+
+.content-heading-2{
+  font-size: 40px;
+  color: #ff950c;
+  font-family: noto-bold, sans-serif;
+}
+
 
 
 @media screen and (max-width: 768px) {
