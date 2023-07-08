@@ -426,9 +426,61 @@ nav li img {
   font-family: noto-bold, sans-serif;
 }
 
+.cls-section{
+  padding: 30px 25px;
+}
+
+.cls-banner{
+  border: 5px solid #d863cb;
+  margin: 20px 25px;
+  border-radius: 40px;
+}
+
+.cls-banner h1{
+  font-size: 90px;
+  color: #ffffff;
+  font-family: mechanismo, sans-serif;
+  padding: 15px;
+}
+
+.cls-banner h6{
+  font-size: 45px;
+  color: #ae3cb5;
+  font-family: noto, sans-serif;
+}
+
+.cls-banner p{
+  font-size: 25px;
+  color: #ffffff;
+  font-family: noto, sans-serif;
+}
+
+.cls-banner li {
+  display: inline-block;
+  font-size: 20px;
+  list-style-type: none;
+  padding: 10px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #4e009e;
+  margin-top: 15px;
+}
+
+.cls-banner li span {
+  display: block;
+  font-size: 2.5rem;
+}
 
 
 @media screen and (max-width: 768px) {
+  .cls-banner li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+
+  .cls-banner li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+
   #menu {
     transform: none;
     opacity: 0;
