@@ -241,7 +241,7 @@ nav li img {
 .blind-box {
   margin: 100px 50px;
   background-color: #3d17af80;
-  border: 5px solid #a94e96;
+  border: 5px solid #a94e9600;
   border-radius: 50px;
 }
 .blind-box-row-image{
@@ -436,6 +436,11 @@ nav li img {
   border-radius: 40px;
 }
 
+.cls-banner-1{
+  margin: 20px 25px;
+  border-radius: 40px;
+}
+
 .cls-banner h1{
   font-size: 90px;
   color: #ffffff;
@@ -488,6 +493,129 @@ nav li img {
   }
 
 }
+
+.slider {
+  width: 100%;
+}
+
+.card {
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  background-color: transparent;
+}
+
+.card-main{
+  border: 4px solid #933686;
+  height: 490px !important;
+  border-radius: 40px;
+}
+
+.card img {
+  max-height: 200px;
+  margin: 0 auto;
+  display: block;
+}
+.card h3 {
+  font-size: 30px;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-family: mechanismo,sans-serif;
+  margin-top: 20px;
+}
+
+.card p {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-family: mechanismo,sans-serif;
+  margin-top: 20px;
+  letter-spacing: 5px;
+}
+
+.card .price{
+  font-size: 40px;
+  color: #00fff0;
+  font-family: mechanismo, sans-serif;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.card-main-golden {
+  border: 5px solid;
+  border-image: linear-gradient(to top, #fff075, #000000) 1;
+  height: 490px !important;
+  border-radius: 40px;
+}
+
+.card-main-golden h3{
+  font-size: 30px;
+  margin-bottom: 5px;
+  color: #fff075;
+  font-family: mechanismo,sans-serif;
+  margin-top: 20px;
+}
+
+.card-main-golden p{
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #fff075;
+  font-family: mechanismo,sans-serif;
+  margin-top: 20px;
+  letter-spacing: 5px;
+}
+
+.card-main-golden .price{
+  font-size: 40px;
+  color: #ffffff;
+  font-family: mechanismo, sans-serif;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+
+.slick-prev,
+.slick-next {
+  display: none !important;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  z-index: 1;
+  color: #000;
+}
+.slick-prev {
+  left: 10px;
+}
+.slick-next {
+  right: 10px;
+}
+.line-over-text {
+  position: relative;
+  display: inline-block;
+  font-size: 30px;
+  color: #079493;
+  padding-bottom: 25px;
+}
+.line-over-text::after {
+  content: '';
+  position: absolute;
+  bottom: 43px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #079493;
+}
+
+.add-to-cart{
+  padding: 20px 50px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 30px;
+  border-radius: 40px;
+  border: 5px solid #ff77d7;
+  font-family: orbitron, sans-serif;
+}
+
 @media only screen and (min-width: 600px) {
   .head-back{
     background-color: #1105db;
