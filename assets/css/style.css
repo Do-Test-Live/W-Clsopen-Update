@@ -512,7 +512,7 @@ nav li img {
 }
 
 .card img {
-  max-height: 200px;
+  max-height: 450px;
   margin: 0 auto;
   display: block;
 }
@@ -542,9 +542,9 @@ nav li img {
 }
 
 .card-main-golden {
-  border: 5px solid;
-  border-image: linear-gradient(to top, #fff075, #000000) 1;
-  height: 490px !important;
+  border: 5px solid #fff075;
+  height: 510px !important;
+  background-color: #ffffff;
   border-radius: 40px;
 }
 
@@ -567,7 +567,7 @@ nav li img {
 
 .card-main-golden .price{
   font-size: 40px;
-  color: #ffffff;
+  color: #000000;
   font-family: mechanismo, sans-serif;
   margin-bottom: 20px;
   margin-left: 20px;
@@ -647,4 +647,8 @@ nav li img {
     font-family: mechanismo, sans-serif;
     text-transform: uppercase;
   }
+}
+
+.first-slider{
+  width: 100%;
 }
