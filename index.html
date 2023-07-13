@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
     <head>
+        <script>
+            if (window.innerWidth > 992) { // Adjust the breakpoint as needed
+                console.log(window.innerWidth);
+                alert('This webpage is only accessible on mobile devices.');
+                window.location.href = 'https://www.google.com/'; // Redirect to a desktop-only page
+            }
+        </script>
         <meta charset="UTF-8">
         <title>Home</title>
         <link rel='stylesheet'
@@ -592,6 +599,8 @@
     </div>
 
 </section>
+
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="assets/js/custom.js"></script>
