@@ -512,7 +512,7 @@ nav li img {
 }
 
 .card img {
-  max-height: 450px;
+  max-width: 205px;
   margin: 0 auto;
   display: block;
 }

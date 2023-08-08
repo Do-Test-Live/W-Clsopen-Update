@@ -1,3 +1,7 @@
+<?php
+include('include/dbController.php');
+$db_handle = new DBController();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -331,6 +335,8 @@
         </div>
         <div class="row">
             <div class="slider">
+
+
                 <div class="card">
                     <div class="card-main">
                         <img src="assets/images/new_website/meat-floss.png" alt="Image 1" class="mt-5">
@@ -344,32 +350,8 @@
                         <button class="btn add-to-cart">Add To The Cart</button>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/nescafe.png" alt="Image 2" class="mt-5">
-                        <h3>NESCAFE COFFEE</h3>
-                        <p>(ORIGINAL BOX)</p>
-                        <div class="row text-start">
-                            <p class="price">$60 <span class="line-over-text">$160</span></p>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/instant-suction.png" alt="Image 3" class="mt-5">
-                        <h3>INSTANT SUCTION</h3>
-                        <p>(DOUBLE CARE SLIM)</p>
-                        <div class="row text-start">
-                            <p class="price">$60 <span class="line-over-text">$160</span></p>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
+
+
             </div>
         </div>
 
@@ -390,6 +372,7 @@
         </div>
         <div class="row">
             <div class="slider">
+
                 <div class="card">
                     <div class="card-main">
                         <img src="assets/images/new_website/essence--chicken.png" alt="Image 1" class="mt-5">
@@ -403,32 +386,7 @@
                         <button class="btn add-to-cart">Add To The Cart</button>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/australian-manuka.png" alt="Image 2" class="mt-5">
-                        <h3>100% AUSTRALIAN</h3>
-                        <p>MANUKA HONEY</p>
-                        <div class="row text-start">
-                            <p class="price">$332</p>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/essence--chicken.png" alt="Image 3" class="mt-5">
-                        <h3>ESSENCE OF CHICKEN</h3>
-                        <p>(ROOM TEMPERATURE VERSION)</p>
-                        <div class="row text-start">
-                            <p class="price">$60 <span class="line-over-text">$160</span></p>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
+
             </div>
         </div>
 
@@ -508,6 +466,7 @@
         </div>
         <div class="row">
             <div class="slider">
+
                 <div class="card">
                     <div class="card-main-golden">
                         <img src="assets/images/new_website/Fairy-tale.png" alt="Image 1" class="mt-5">
@@ -522,34 +481,7 @@
                         <button class="btn add-to-cart">Add To The Cart</button>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-main-golden">
-                        <img src="assets/images/new_website/pink-love.png" alt="Image 2" class="mt-5">
-                        <h3>PINK LOVE SONG</br>
-                            LADIES EAU DE</br>
-                            TOILETTE</h3>
-                        <div class="row text-start">
-                            <p class="price">$332</p>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-main-golden">
-                        <img src="assets/images/new_website/Fairy-tale.png" alt="Image 1" class="mt-5">
-                        <h3>FAIRY TALE PINK</br>
-                            UNICORN EAU DE</br>
-                            TOILETTE</h3>
-                        <div class="row text-start">
-                            <p class="price">$60</p>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
+
             </div>
         </div>
 

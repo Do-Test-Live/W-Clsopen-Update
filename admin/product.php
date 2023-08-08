@@ -14,7 +14,7 @@ $db_handle = new DBController();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Apply - CLSOPENBOX</title>
+    <title>Product - CLSOPENBOX</title>
 
     <?php require_once 'include/css.php'; ?>
 
@@ -39,16 +39,16 @@ $db_handle = new DBController();
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Registration Data</h1>
+                <h1 class="h3 mb-2 text-gray-800">Product Data</h1>
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Registration Data</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Product Data</h6>
                     </div>
                     <div class="card-body">
                         <div class="text-center mb-4">
-                            <a href="report.php?report=1" class="btn btn-primary">Export Data</a>
+                            <a href="add_product.php" class="btn btn-primary">Add Product</a>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -56,32 +56,41 @@ $db_handle = new DBController();
                                 <tr>
                                     <th>SL</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>NGT NFT reserve</th>
-                                    <th>Contact No</th>
+                                    <th>Description</th>
+                                    <th>Image</th>
+                                    <th>Price</th>
+                                    <th>Discount Price</th>
+                                    <th>Product Shelf</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
                                     <th>SL</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>NGT NFT reserve</th>
-                                    <th>Contact No</th>
+                                    <th>Description</th>
+                                    <th>Image</th>
+                                    <th>Price</th>
+                                    <th>Discount Price</th>
+                                    <th>Product Shelf</th>
+                                    <th>Action</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
                                 <?php
-                                $data = $db_handle->runQuery("SELECT * FROM registration order by id desc");
-                                $row_count = $db_handle->numRows("SELECT * FROM registration order by id desc");
+                                $data = $db_handle->runQuery("SELECT * FROM product order by id desc");
+                                $row_count = $db_handle->numRows("SELECT * FROM product order by id desc");
                                 for ($i = 0; $i < $row_count; $i++) {
                                     ?>
                                     <tr>
                                         <td><?php echo $i + 1; ?></td>
                                         <td><?php echo $data[$i]["name"]; ?></td>
-                                        <td><?php echo $data[$i]["email"]; ?></td>
-                                        <td><?php echo $data[$i]["reserve"]; ?></td>
-                                        <td><?php echo $data[$i]["phone"]; ?></td>
+                                        <td><?php echo $data[$i]["description"]; ?></td>
+                                        <td><?php echo $data[$i]["image"]; ?></td>
+                                        <td><?php echo $data[$i]["price"]; ?></td>
+                                        <td><?php echo $data[$i]["discount_price"]; ?></td>
+                                        <td><?php echo $data[$i]["product_shelf"]; ?></td>
+                                        <td><?php echo $data[$i]["id"]; ?></td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
