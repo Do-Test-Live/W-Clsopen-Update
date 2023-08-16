@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('include/dbController.php');
 $db_handle = new DBController();
 ?>
@@ -32,7 +33,21 @@ $db_handle = new DBController();
         <li><img class="img-fluid" src="assets/images/10sec/Logo.png"></li>
         <li><img class="img-fluid" src="assets/images/navbar/magnifier.png"></li>
         <li><img class="img-fluid" src="assets/images/navbar/game-controller.png"></li>
-        <li><img class="img-fluid" src="assets/images/navbar/account.png"></li>
+        <li>
+            <?php if (isset($_SESSION['userid'])) {
+                ?>
+                <a href="logout.php">
+                    <img class="img-fluid" src="assets/images/navbar/account.png">
+                </a>
+                <?php
+            } else {
+                ?>
+                <a href="account.php">
+                    <img class="img-fluid" src="assets/images/navbar/account.png">
+                </a>
+                <?php
+            } ?>
+        </li>
         <li><img class="img-fluid" src="assets/images/navbar/menu.png"></li>
     </ul>
 </nav>
@@ -109,23 +124,22 @@ $db_handle = new DBController();
     </div>
 
 
-
     <div class="container-fluid cls-section" style="padding-bottom: 0 !important;">
         <div class="row">
             <div class="slider">
                 <div class="card">
                     <div>
-                        <img src="assets/images/new_website/toy01.png" alt="Image 1" class="mt-5">
+                        <img src="assets/images/new_website/toy01.png" alt="Image 1" class="mt-5 img-fluid">
                     </div>
                 </div>
                 <div class="card">
                     <div>
-                        <img src="assets/images/new_website/toy02.png" alt="Image 2" class="mt-5">
+                        <img src="assets/images/new_website/toy02.png" alt="Image 2" class="mt-5 img-fluid">
                     </div>
                 </div>
                 <div class="card">
                     <div>
-                        <img src="assets/images/new_website/toy01.png" alt="Image 1" class="mt-5">
+                        <img src="assets/images/new_website/toy01.png" alt="Image 1" class="mt-5 img-fluid">
                     </div>
                 </div>
             </div>
@@ -142,17 +156,17 @@ $db_handle = new DBController();
             <div class="slider">
                 <div class="card">
                     <div>
-                        <img src="assets/images/new_website/toy03.png" alt="Image 1" class="mt-5">
+                        <img src="assets/images/new_website/toy03.png" alt="Image 1" class="mt-5 img-fluid">
                     </div>
                 </div>
                 <div class="card">
                     <div>
-                        <img src="assets/images/new_website/toy04.png" alt="Image 2" class="mt-5">
+                        <img src="assets/images/new_website/toy04.png" alt="Image 2" class="mt-5 img-fluid">
                     </div>
                 </div>
                 <div class="card">
                     <div>
-                        <img src="assets/images/new_website/toy03.png" alt="Image 1" class="mt-5">
+                        <img src="assets/images/new_website/toy03.png" alt="Image 1" class="mt-5 img-fluid">
                     </div>
                 </div>
             </div>
@@ -270,26 +284,23 @@ $db_handle = new DBController();
         <div class="row">
             <div class="slider">
                 <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/pic05.png" alt="Image 1" class="mt-5">
-                    </div>
+                    <img src="assets/images/new_website/pic05.png" alt="Image 1" class="mt-5 img-fluid"
+                         style="border: 4px solid #933686;border-radius: 25px;">
                     <div class="row mt-5">
                         <button class="btn add-to-cart">香港小店</button>
                     </div>
 
                 </div>
                 <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/pic06.png" alt="Image 2" class="mt-5">
-                    </div>
+                    <img src="assets/images/new_website/pic06.png" alt="Image 2" class="mt-5 img-fluid"
+                         style="border: 4px solid #933686;border-radius: 25px;">
                     <div class="row mt-5">
                         <button class="btn add-to-cart">香港小店</button>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/pic05.png" alt="Image 3" class="mt-5">
-                    </div>
+                    <img src="assets/images/new_website/pic05.png" alt="Image 3" class="mt-5 img-fluid"
+                         style="border: 4px solid #933686;border-radius: 25px;">
                     <div class="row mt-5">
                         <button class="btn add-to-cart">香港小店</button>
                     </div>
@@ -336,22 +347,32 @@ $db_handle = new DBController();
         <div class="row">
             <div class="slider">
 
-
-                <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/meat-floss.png" alt="Image 1" class="mt-5">
-                        <h3>MEAT FLOSS CAKE</h3>
-                        <p>(TARO PASTE)</p>
-                        <div class="row text-start">
-                            <p class="price">$60 <span class="line-over-text">$160</span></p>
+                <?php
+                $data = $db_handle->runQuery("SELECT * FROM product where product_shelf=2");
+                $row_count = $db_handle->numRows("SELECT * FROM product where product_shelf=2");
+                for ($i = 0; $i < $row_count; $i++) {
+                    ?>
+                    <div class="card">
+                        <div class="card-main">
+                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5">
+                            <h3><?php echo $data[$i]["name"]; ?></h3>
+                            <p><?php echo $data[$i]["description"]; ?></p>
+                            <div class="row text-start">
+                                <p class="price">
+                                    $<?php echo $data[$i]["price"]; ?>
+                                    <?php if ($data[$i]["discount_price"] != 0) { ?>
+                                        <span class="line-over-text">$<?php echo $data[$i]["discount_price"]; ?></span>
+                                    <?php } ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <button class="btn add-to-cart">Add To The Cart</button>
                         </div>
                     </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
-
-
+                    <?php
+                }
+                ?>
             </div>
         </div>
 
@@ -373,19 +394,32 @@ $db_handle = new DBController();
         <div class="row">
             <div class="slider">
 
-                <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/essence--chicken.png" alt="Image 1" class="mt-5">
-                        <h3>ESSENCE OF CHICKEN</h3>
-                        <p>(ROOM TEMPERATURE VERSION)</p>
-                        <div class="row text-start">
-                            <p class="price">$60</p>
+                <?php
+                $data = $db_handle->runQuery("SELECT * FROM product where product_shelf=3");
+                $row_count = $db_handle->numRows("SELECT * FROM product where product_shelf=3");
+                for ($i = 0; $i < $row_count; $i++) {
+                    ?>
+                    <div class="card">
+                        <div class="card-main">
+                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5">
+                            <h3><?php echo $data[$i]["name"]; ?></h3>
+                            <p><?php echo $data[$i]["description"]; ?></p>
+                            <div class="row text-start">
+                                <p class="price">
+                                    $<?php echo $data[$i]["price"]; ?>
+                                    <?php if ($data[$i]["discount_price"] != 0) { ?>
+                                        <span class="line-over-text">$<?php echo $data[$i]["discount_price"]; ?></span>
+                                    <?php } ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <button class="btn add-to-cart">Add To The Cart</button>
                         </div>
                     </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
+                    <?php
+                }
+                ?>
 
             </div>
         </div>
@@ -407,45 +441,32 @@ $db_handle = new DBController();
         </div>
         <div class="row">
             <div class="slider">
-                <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/estee-lauder.png" alt="Image 1" class="mt-5">
-                        <h3>ESTEE LAUDER</h3>
-                        <p>(PARALLEL IMPORT)</p>
-                        <div class="row text-start">
-                            <p class="price">$60</p>
+                <?php
+                $data = $db_handle->runQuery("SELECT * FROM product where product_shelf=4");
+                $row_count = $db_handle->numRows("SELECT * FROM product where product_shelf=4");
+                for ($i = 0; $i < $row_count; $i++) {
+                    ?>
+                    <div class="card">
+                        <div class="card-main">
+                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5">
+                            <h3><?php echo $data[$i]["name"]; ?></h3>
+                            <p><?php echo $data[$i]["description"]; ?></p>
+                            <div class="row text-start">
+                                <p class="price">
+                                    $<?php echo $data[$i]["price"]; ?>
+                                    <?php if ($data[$i]["discount_price"] != 0) { ?>
+                                        <span class="line-over-text">$<?php echo $data[$i]["discount_price"]; ?></span>
+                                    <?php } ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <button class="btn add-to-cart">Add To The Cart</button>
                         </div>
                     </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/fancl.png" alt="Image 2" class="mt-5">
-                        <h3>FANCL</h3>
-                        <p>(PARALLEL IMPORT)</p>
-                        <div class="row text-start">
-                            <p class="price">$332</p>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-main">
-                        <img src="assets/images/new_website/estee-lauder.png" alt="Image 3" class="mt-5">
-                        <h3>ESTEE LAUDER</h3>
-                        <p>(PARALLEL IMPORT)</p>
-                        <div class="row text-start">
-                            <p class="price">$60</p>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
+                    <?php
+                }
+                ?>
             </div>
         </div>
 
@@ -467,20 +488,32 @@ $db_handle = new DBController();
         <div class="row">
             <div class="slider">
 
-                <div class="card">
-                    <div class="card-main-golden">
-                        <img src="assets/images/new_website/Fairy-tale.png" alt="Image 1" class="mt-5">
-                        <h3>FAIRY TALE PINK</br>
-                            UNICORN EAU DE</br>
-                            TOILETTE</h3>
-                        <div class="row text-start">
-                            <p class="price">$60</p>
+                <?php
+                $data = $db_handle->runQuery("SELECT * FROM product where product_shelf=5");
+                $row_count = $db_handle->numRows("SELECT * FROM product where product_shelf=5");
+                for ($i = 0; $i < $row_count; $i++) {
+                    ?>
+                    <div class="card">
+                        <div class="card-main-golden">
+                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5">
+                            <h3><?php echo $data[$i]["name"]; ?></h3>
+                            <p><?php echo $data[$i]["description"]; ?></p>
+                            <div class="row text-start">
+                                <p class="price">
+                                    $<?php echo $data[$i]["price"]; ?>
+                                    <?php if ($data[$i]["discount_price"] != 0) { ?>
+                                        <span class="line-over-text">$<?php echo $data[$i]["discount_price"]; ?></span>
+                                    <?php } ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <button class="btn add-to-cart">Add To The Cart</button>
                         </div>
                     </div>
-                    <div class="row mt-5">
-                        <button class="btn add-to-cart">Add To The Cart</button>
-                    </div>
-                </div>
+                    <?php
+                }
+                ?>
 
             </div>
         </div>
@@ -524,7 +557,6 @@ $db_handle = new DBController();
     </div>
 
 </section>
-
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
