@@ -35,5 +35,13 @@
         </a>
     </li>
 
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="gift.php">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Gift Data</span>
+        </a>
+    </li>
+
 </ul>
 <!-- End of Sidebar -->

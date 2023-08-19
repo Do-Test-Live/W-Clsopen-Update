@@ -95,39 +95,39 @@ $fetch_pro = $db_handle->runQuery("SELECT * FROM `gifts`");
         <img src="assets/images/10sec/Logo.png" class="img-fluid mx-auto" alt="">
     </div>
     <div class="mx-auto text-center mt-5" style="max-width: 550px">
-        <div class="square border" data-probability="<?php echo $fetch_pro[0]['gift1']; ?>" id="id1">
+        <div class="square border" data-probability="<?php echo (float)($fetch_pro[0]['gift1']/100); ?>" id="id1">
             <div class="textArea">Choose Me</div>
             <div class="textArea2">Gift 1</div>
         </div>
-        <div class="square border" data-probability="<?php echo $fetch_pro[0]['gift2']; ?>">
+        <div class="square border" data-probability="<?php echo (float)($fetch_pro[0]['gift2']/100); ?>">
             <div class="textArea">Choose Me</div>
             <div class="textArea2">Gift 2</div>
         </div>
-        <div class="square border" data-probability="<?php echo $fetch_pro[0]['gift3']; ?>">
+        <div class="square border" data-probability="<?php echo (float)($fetch_pro[0]['gift3']/100); ?>">
             <div class="textArea">Choose Me</div>
             <div class="textArea2">Gift 3</div>
         </div>
-        <div class="square border" data-probability="<?php echo $fetch_pro[0]['gift4']; ?>">
+        <div class="square border" data-probability="<?php echo (float)($fetch_pro[0]['gift4']/100); ?>">
             <div class="textArea">Choose Me</div>
             <div class="textArea2">Gift 4</div>
         </div>
-        <div class="square border" data-probability="<?php echo $fetch_pro[0]['gift5']; ?>">
+        <div class="square border" data-probability="<?php echo (float)($fetch_pro[0]['gift5']/100); ?>">
             <div class="textArea">Choose Me</div>
             <div class="textArea2">Gift 5</div>
         </div>
-        <div class="square border" data-probability="<?php echo $fetch_pro[0]['gift6']; ?>">
+        <div class="square border" data-probability="<?php echo (float)($fetch_pro[0]['gift6']/100); ?>">
             <div class="textArea">Choose Me</div>
             <div class="textArea2">Gift 6</div>
         </div>
-        <div class="square border" data-probability="<?php echo $fetch_pro[0]['gift7']; ?>">
+        <div class="square border" data-probability="<?php echo (float)($fetch_pro[0]['gift7']/100); ?>">
             <div class="textArea">Choose Me</div>
             <div class="textArea2">Gift 7</div>
         </div>
-        <div class="square border" data-probability="<?php echo $fetch_pro[0]['gift8']; ?>">
+        <div class="square border" data-probability="<?php echo (float)($fetch_pro[0]['gift8']/100); ?>">
             <div class="textArea">Choose Me</div>
             <div class="textArea2">Gift 8</div>
         </div>
-        <div class="square border" data-probability="<?php echo $fetch_pro[0]['gift9']; ?>">
+        <div class="square border" data-probability="<?php echo (float)($fetch_pro[0]['gift9']/100); ?>">
             <div class="textArea">Choose Me</div>
             <div class="textArea2">Gift 9</div>
         </div>
