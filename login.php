@@ -1,23 +1,24 @@
 <?php
+session_start();
 include('include/dbController.php');
 $db_handle = new DBController();
-if(isset($_POST['signup'])){
-    $name=$_POST['name'];
-    $email=$_POST['email'];
-    $password=$_POST['password'];
-    $inserted_at=date("Y-m-d h:i:s");
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    $insert = $db_handle->insertQuery("INSERT INTO `userlogin`(`name`, `email`, `password`, `inserted_at`) VALUES ('$name','$email','$password','$inserted_at')");
-    if($insert){
+    $row_count = $db_handle->numRows("SELECT * FROM userlogin where email='$email' and password='$password'");
+    $data = $db_handle->runQuery("SELECT * FROM userlogin where email='$email' and password='$password'");
+    if ($row_count > 0) {
+        $_SESSION['userid'] = $data[0]['id'];
         echo "<script>
-    alert('Signup Successful.');
-    window.location.href='login.php';
-</script>";
-    }else{
+                alert('Login Successful.');
+                window.location.href='index.php';
+                </script>";
+    } else {
         echo "<script>
-    alert('Something went wrong.');
-    window.location.href='signup.php';
-</script>";
+                alert('Incorrect Data.');
+                window.location.href='login.php';
+                </script>";
     }
 }
 ?>
@@ -25,7 +26,7 @@ if(isset($_POST['signup'])){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up</title>
+    <title>Login</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css'
@@ -36,7 +37,7 @@ if(isset($_POST['signup'])){
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <style>
         .login-form-input {
-            box-shadow:inset 0 0 5px 5px #21233c;
+            box-shadow: inset 0 0 5px 5px #21233c;
             background: #3f3f5dde;
             border-radius: 25px;
             border: 1px solid white;
@@ -47,29 +48,29 @@ if(isset($_POST['signup'])){
             color: white !important;
             font-size: 13px;
             padding-left: 0.25rem;
-            font-family: 'Jura',sans-serif;
+            font-family: 'Jura', sans-serif;
             font-weight: 100;
         }
 
-        .btn-login,.btn-login:hover{
+        .btn-login, .btn-login:hover {
             border-radius: 25px;
             background: #0033ff;
             border: 1px solid #0033ff;
             color: #00f6ff;
-            font-family: 'orbitron',sans-serif;
+            font-family: 'orbitron', sans-serif;
         }
 
-        .login-header{
+        .login-header {
             color: #00f6ff;
-            font-family: 'orbitron',sans-serif;
+            font-family: 'orbitron', sans-serif;
         }
 
-        .btn-create,.btn-create:hover{
+        .btn-create, .btn-create:hover {
             border-radius: 25px;
             background: #f14848;
             border: 1px solid #f14848;
             color: #ffffff;
-            font-family: 'orbitron',sans-serif;
+            font-family: 'orbitron', sans-serif;
         }
 
         .or-text {
@@ -82,18 +83,14 @@ if(isset($_POST['signup'])){
 
         .or-text span {
             color: #00f6ff;
-            background:#1f2233;
-            padding:0 10px;
-            font-family: 'Jura',sans-serif;
+            background: #1f2233;
+            padding: 0 10px;
+            font-family: 'Jura', sans-serif;
             font-size: 12px;
         }
 
-        .forgot-password{
-            font-family: 'Jura',sans-serif;
-        }
-
-        .text-primary{
-            color: #00f6ff !important;
+        .forgot-password {
+            font-family: 'Jura', sans-serif;
         }
     </style>
 </head>
@@ -104,39 +101,31 @@ if(isset($_POST['signup'])){
             <img alt="" class="img-fluid" src="assets/images/10sec/Logo.png"/>
         </div>
         <div class="col-12 text-center">
-            <h2 class="mt-5 login-header">Sign up</h2>
+            <h2 class="mt-5 login-header">Log in</h2>
         </div>
         <div class="col-12 mt-4 ps-5 pe-5">
             <form action="" method="post">
                 <div class="mb-3">
-                    <input class="form-control login-form-input" name="name" placeholder="Name" required type="text"/>
-                </div>
-                <div class="mb-3">
-                    <input class="form-control login-form-input" name="email" placeholder="Email" required type="email"/>
-                </div>
-                <div class="mb-3">
-                    <input class="form-control login-form-input" name="password" placeholder="Password" required type="password"/>
+                    <input class="form-control login-form-input" name="email" placeholder="Email" required
+                           type="email"/>
                 </div>
                 <div class="mb-4">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
-                        <label class="form-check-label" for="flexCheckDefault">
-                            <span class="text-white" style="font-family: 'Jura',sans-serif">I had read and agree</span> <span class="text-primary">User Agreement</span>
-                        </label>
-                    </div>
+                    <input class="form-control login-form-input" name="password" placeholder="Password" required
+                           type="password"/>
                 </div>
                 <div class="mb-3">
-                    <button type="submit" name="signup" class="btn btn-warning w-100 btn-create">Create Account</button>
+                    <button type="submit" name="login" class="btn btn-primary w-100 btn-login">Log In</button>
                 </div>
             </form>
             <div class="mb-4">
-                <p class="text-white text-center"><a href="#" class="text-decoration-none text-white forgot-password">Forgot password?</a></p>
+                <p class="text-white text-center"><a href="#" class="text-decoration-none text-white forgot-password">Forgot
+                        password?</a></p>
             </div>
             <div class="mb-3">
                 <p class="text-white text-center or-text"><span>OR</span></p>
             </div>
             <div class="mb-3">
-                <a href="login.php" class="btn btn-primary w-100 btn-login">Log In</a>
+                <a href="signup.php" class="btn btn-warning w-100 btn-create">Create Account</a>
             </div>
         </div>
 
