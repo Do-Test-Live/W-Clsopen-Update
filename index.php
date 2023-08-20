@@ -42,7 +42,7 @@ $db_handle = new DBController();
                 <?php
             } else {
                 ?>
-                <a href="#">
+                <a href="login.php">
                     <img class="img-fluid" src="assets/images/navbar/account.png">
                 </a>
                 <?php
