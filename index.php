@@ -354,11 +354,11 @@ $db_handle = new DBController();
                     ?>
                     <div class="card">
                         <div class="card-main">
-                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5">
+                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5 img-fluid">
                             <h3><?php echo $data[$i]["name"]; ?></h3>
                             <p><?php echo $data[$i]["description"]; ?></p>
                             <div class="row text-start">
-                                <p class="price">
+                                <p class="price text-center">
                                     $<?php echo $data[$i]["price"]; ?>
                                     <?php if ($data[$i]["discount_price"] != 0) { ?>
                                         <span class="line-over-text">$<?php echo $data[$i]["discount_price"]; ?></span>
@@ -401,7 +401,7 @@ $db_handle = new DBController();
                     ?>
                     <div class="card">
                         <div class="card-main">
-                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5">
+                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5 img-fluid">
                             <h3><?php echo $data[$i]["name"]; ?></h3>
                             <p><?php echo $data[$i]["description"]; ?></p>
                             <div class="row text-start">
@@ -448,7 +448,7 @@ $db_handle = new DBController();
                     ?>
                     <div class="card">
                         <div class="card-main">
-                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5">
+                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5 img-fluid">
                             <h3><?php echo $data[$i]["name"]; ?></h3>
                             <p><?php echo $data[$i]["description"]; ?></p>
                             <div class="row text-start">
@@ -495,7 +495,7 @@ $db_handle = new DBController();
                     ?>
                     <div class="card">
                         <div class="card-main-golden">
-                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5">
+                            <img src="<?php echo $data[$i]["image"]; ?>" alt="Image 1" class="mt-5 img-fluid">
                             <h3><?php echo $data[$i]["name"]; ?></h3>
                             <p><?php echo $data[$i]["description"]; ?></p>
                             <div class="row text-start">

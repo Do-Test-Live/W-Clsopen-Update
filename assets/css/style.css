@@ -516,14 +516,16 @@ nav li img {
   display: block;
 }
 .card h3 {
+  height: 2rem;
   font-size: 30px;
   margin-bottom: 5px;
   color: #ffffff;
   font-family: mechanismo,sans-serif;
-  margin-top: 20px;
+  margin-top: 3rem;
 }
 
 .card p {
+  height: 3rem;
   font-size: 20px;
   margin-bottom: 5px;
   color: #ffffff;
@@ -537,7 +539,7 @@ nav li img {
   color: #00fff0;
   font-family: mechanismo, sans-serif;
   margin-bottom: 20px;
-  margin-left: 20px;
+  text-align: center;
 }
 
 .card-main-golden {
@@ -548,14 +550,16 @@ nav li img {
 }
 
 .card-main-golden h3{
+  height: 2rem;
   font-size: 30px;
   margin-bottom: 5px;
   color: #fff075;
   font-family: mechanismo,sans-serif;
-  margin-top: 20px;
+  margin-top: 3rem;
 }
 
 .card-main-golden p{
+  height: 3rem;
   font-size: 20px;
   margin-bottom: 5px;
   color: #fff075;
@@ -569,7 +573,6 @@ nav li img {
   color: #000000;
   font-family: mechanismo, sans-serif;
   margin-bottom: 20px;
-  margin-left: 20px;
 }
 
 
