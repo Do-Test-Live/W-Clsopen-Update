@@ -52,51 +52,51 @@ window.location.href = 'index.php';
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <h2>Gift Winning Probability</h2>
+                <h2>Gift Winning Probability (%)</h2>
                 <form action="" method="post">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Gift 1</label>
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="g1"
+                        <input type="number" class="form-control" id="" aria-describedby="emailHelp" name="g1"
                                value="<?php echo $fetch_pro[0]['gift1']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Gift 2</label>
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="g2"
+                        <input type="number" class="form-control" id="" aria-describedby="emailHelp" name="g2"
                                value="<?php echo $fetch_pro[0]['gift2']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Gift 3</label>
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="g3"
+                        <input type="number" class="form-control" id="" aria-describedby="emailHelp" name="g3"
                                value="<?php echo $fetch_pro[0]['gift3']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Gift 4</label>
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="g4"
+                        <input type="number" class="form-control" id="" aria-describedby="emailHelp" name="g4"
                                value="<?php echo $fetch_pro[0]['gift4']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Gift 5</label>
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="g5"
+                        <input type="number" class="form-control" id="" aria-describedby="emailHelp" name="g5"
                                value="<?php echo $fetch_pro[0]['gift5']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Gift 6</label>
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="g6"
+                        <input type="number" class="form-control" id="" aria-describedby="emailHelp" name="g6"
                                value="<?php echo $fetch_pro[0]['gift6']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Gift 7</label>
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="g7"
+                        <input type="number" class="form-control" id="" aria-describedby="emailHelp" name="g7"
                                value="<?php echo $fetch_pro[0]['gift7']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Gift 8</label>
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="g8"
+                        <input type="number" class="form-control" id="" aria-describedby="emailHelp" name="g8"
                                value="<?php echo $fetch_pro[0]['gift8']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Gift 9</label>
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="g9"
+                        <input type="number" class="form-control" id="" aria-describedby="emailHelp" name="g9"
                                value="<?php echo $fetch_pro[0]['gift9']; ?>">
                     </div>
 
