@@ -36,6 +36,7 @@ if(isset($_POST['signup'])){
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <style>
         .login-form-input {
+            color: white;
             box-shadow:inset 0 0 5px 5px #21233c;
             background: #3f3f5dde;
             border-radius: 25px;

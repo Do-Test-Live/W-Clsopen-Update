@@ -39,6 +39,7 @@ if (isset($_POST['login'])) {
         .login-form-input {
             box-shadow: inset 0 0 5px 5px #21233c;
             background: #3f3f5dde;
+            color: white;
             border-radius: 25px;
             border: 1px solid white;
             height: 45px;
