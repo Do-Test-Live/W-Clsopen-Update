@@ -43,11 +43,39 @@
         </a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="gift_details.php">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Gift</span>
+        </a>
+    </li>
+
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link" href="register.php">
             <i class="fas fa-fw fa-cog"></i>
             <span>Customer Data</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="order.php">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Order Data</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="main_spinner.php">
+            <i class="fas fa-fw fa-image"></i>
+            <span>Main Spinner</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="spinner_images.php">
+            <i class="fas fa-fw fa-images"></i>
+            <span>Spinner Gift Images</span>
         </a>
     </li>
 

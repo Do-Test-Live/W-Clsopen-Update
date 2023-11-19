@@ -63,6 +63,7 @@ if(isset($_POST['signup'])){
         .login-header{
             color: #00f6ff;
             font-family: 'orbitron',sans-serif;
+            font-size: 40px;
         }
 
         .btn-create,.btn-create:hover{
@@ -101,8 +102,8 @@ if(isset($_POST['signup'])){
 <body style="background: url('assets/images/content/BG.jpg'); background-repeat: no-repeat; background-position: center;background-size: cover; height: 100%">
 <div class="container d-flex justify-content-center align-items-center">
     <div class="row mt-5">
-        <div class="col-12 text-center">
-            <img alt="" class="img-fluid" src="assets/images/10sec/Logo.png"/>
+        <div class="col-12 d-flex align-items-center justify-content-center">
+            <img alt="" style="height: 100px; width: 138px;" src="assets/images/10sec/Logo.png"/>
         </div>
         <div class="col-12 text-center">
             <h2 class="mt-5 login-header">Sign up</h2>

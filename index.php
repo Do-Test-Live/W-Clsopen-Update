@@ -2,6 +2,8 @@
 session_start();
 include('include/dbController.php');
 $db_handle = new DBController();
+
+include('include/add_to_cart.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,43 +23,18 @@ $db_handle = new DBController();
 </head>
 <body style="background: url('assets/images/10sec/BG.jpg'); background-repeat: no-repeat; background-position: top;background-size: cover; height: 100%">
 
-<header class="head-back">
-    <div class="container-fluid text-center">
-        <p class="navHeading-text">消費滿$500, 即送轉盤1次</p>
-    </div>
-</header>
-
-
-<nav>
-    <ul>
-        <li><img class="img-fluid" src="assets/images/10sec/Logo.png"></li>
-        <li><img class="img-fluid" src="assets/images/navbar/magnifier.png"></li>
-        <li><img class="img-fluid" src="assets/images/navbar/game-controller.png"></li>
-        <li>
-            <?php if (isset($_SESSION['userid'])) {
-                ?>
-                <a href="logout.php">
-                    <img class="img-fluid" src="assets/images/navbar/account.png">
-                </a>
-                <?php
-            } else {
-                ?>
-                <a href="login.php">
-                    <img class="img-fluid" src="assets/images/navbar/account.png">
-                </a>
-                <?php
-            } ?>
-        </li>
-        <li><img class="img-fluid" src="assets/images/navbar/menu.png"></li>
-    </ul>
-</nav>
+<?php include('include/header.php'); ?>
 
 <section class="main">
-    <div class="row mb-3">
+    <div class="row mb-3 image-container">
         <img src="assets/images/home/1.png" class="img-fluid">
+        <div class="button-container">
+            <button class="left-button"></button>
+            <button class="right-button"></button>
+        </div>
     </div>
     <div class="row mb-5"
-         style="background: url('assets/images/home/2.png'); background-repeat: no-repeat; background-position: center;background-size: cover; height: 50vh">
+         style="background: url('assets/images/home/2.png'); background-repeat: no-repeat; background-position: center;background-size: cover; height: 35vh">
         <div class="col-12 text-center">
             <h1 class="banner-section-heading">iphone 14 pro max</h1>
             <div class="container">
@@ -210,7 +187,9 @@ $db_handle = new DBController();
                 <img class="img-fluid" src="assets/images/package_bundle/mall.png">
             </div>
             <div class="col-3 text-center">
-                <img class="img-fluid" src="assets/images/package_bundle/diy-bilnd-box-icon.png">
+                <a href="draw.php">
+                    <img class="img-fluid" src="assets/images/package_bundle/diy-bilnd-box-icon.png">
+                </a>
             </div>
             <div class="col-3 text-center">
                 <img class="img-fluid" src="assets/images/package_bundle/backpack.png">
@@ -341,12 +320,11 @@ $db_handle = new DBController();
                 </div>
             </div>
             <div class="col-2 my-auto mx-auto">
-                <img src="assets/images/new_website/Arrow.png" class="img-fluid">
+                <img src="assets/images/new_website/Arrow.png" class="img-fluid p-3">
             </div>
         </div>
         <div class="row">
             <div class="slider">
-
                 <?php
                 $data = $db_handle->runQuery("SELECT * FROM product where product_shelf=2");
                 $row_count = $db_handle->numRows("SELECT * FROM product where product_shelf=2");
@@ -367,7 +345,8 @@ $db_handle = new DBController();
                             </div>
                         </div>
                         <div class="row mt-5">
-                            <button class="btn add-to-cart">Add To The Cart</button>
+                            <a href="product_details.php?id=<?php echo $data[$i]["id"]; ?>" class="btn add-to-cart">Add
+                                To The Cart</a>
                         </div>
                     </div>
                     <?php
@@ -387,8 +366,8 @@ $db_handle = new DBController();
     <div class="container-fluid cls-section"
          style="background: url('assets/images/new_website/bg2.png'); background-repeat: no-repeat; background-position: center;background-size: cover; height: 100%; margin-top: -10px;">
         <div class="row cls-banner-1">
-            <div class="col-12">
-                <img src="assets/images/new_website/Cls-store-shop.png" class="img-fluid">
+            <div class="col-2">
+                <img src="assets/images/new_website/Arrow.png" class="img-fluid p-3">
             </div>
         </div>
         <div class="row">
@@ -414,7 +393,8 @@ $db_handle = new DBController();
                             </div>
                         </div>
                         <div class="row mt-5">
-                            <button class="btn add-to-cart">Add To The Cart</button>
+                            <a href="product_details.php?id=<?php echo $data[$i]["id"]; ?>" class="btn add-to-cart">Add
+                                To The Cart</a>
                         </div>
                     </div>
                     <?php
@@ -423,7 +403,6 @@ $db_handle = new DBController();
 
             </div>
         </div>
-
     </div>
 
     <div class="row" style="margin-top: -8px;">
@@ -434,9 +413,9 @@ $db_handle = new DBController();
 
     <div class="container-fluid cls-section"
          style="background: url('assets/images/new_website/bg3.png'); background-repeat: no-repeat; background-position: center;background-size: cover; height: 100%; margin-top: -10px;">
-        <div class="row cls-banner-1">
-            <div class="col-12">
-                <img src="assets/images/new_website/Cls-beauty-secrets.png" class="img-fluid">
+        <div class="row cls-banner-2">
+            <div class="col-2">
+                <img src="assets/images/new_website/Arrow.png" class="img-fluid p-3">
             </div>
         </div>
         <div class="row">
@@ -452,7 +431,7 @@ $db_handle = new DBController();
                             <h3><?php echo $data[$i]["name"]; ?></h3>
                             <p><?php echo $data[$i]["description"]; ?></p>
                             <div class="row text-start">
-                                <p class="price">
+                                <p class="price" style="margin-top: 70px;">
                                     $<?php echo $data[$i]["price"]; ?>
                                     <?php if ($data[$i]["discount_price"] != 0) { ?>
                                         <span class="line-over-text">$<?php echo $data[$i]["discount_price"]; ?></span>
@@ -461,7 +440,8 @@ $db_handle = new DBController();
                             </div>
                         </div>
                         <div class="row mt-5">
-                            <button class="btn add-to-cart">Add To The Cart</button>
+                            <a href="product_details.php?id=<?php echo $data[$i]["id"]; ?>" class="btn add-to-cart">Add
+                                To The Cart</a>
                         </div>
                     </div>
                     <?php
@@ -480,9 +460,9 @@ $db_handle = new DBController();
 
     <div class="container-fluid cls-section"
          style="background: url('assets/images/new_website/bg4.png'); background-repeat: no-repeat; background-position: center;background-size: cover; height: 100%; margin-top: -10px;">
-        <div class="row cls-banner-1">
-            <div class="col-12">
-                <img src="assets/images/new_website/Cls-prestige.png" class="img-fluid">
+        <div class="row cls-banner-3">
+            <div class="col-2">
+                <img src="assets/images/new_website/Arrow-Golden.png" class="img-fluid p-3">
             </div>
         </div>
         <div class="row">
@@ -508,7 +488,8 @@ $db_handle = new DBController();
                             </div>
                         </div>
                         <div class="row mt-5">
-                            <button class="btn add-to-cart">Add To The Cart</button>
+                            <a href="product_details.php?id=<?php echo $data[$i]["id"]; ?>" class="btn add-to-cart">Add
+                                To The Cart</a>
                         </div>
                     </div>
                     <?php
@@ -552,6 +533,37 @@ $db_handle = new DBController();
                 <img src="assets/images/home/7.png" style="height: 300px;width: 250px;">
                 <h6 class="mt-3 gift-name text-center">IPHONE 14 PRO</h6>
                 <p class="mt-2 price-gift text-center">$XXX</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid cls-section"
+         style="background: url('assets/images/new_website/bg5.png'); background-repeat: no-repeat; background-position: center;background-size: cover; height: 100%; margin-top: -10px;">
+        <div class="row card-main" style="padding: 20px; margin: 35px 15px; height: 1250px !important;">
+            <div class="col-12 text-center">
+                <h2 class="spinner-text">遊戲玩法</h2>
+            </div>
+            <div class="col-12">
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 註冊用戶每月可免費獲三次禮卷次數</p>
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 獲取後的禮卷可於會員背包查看</p>
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 禮卷適用於消費指定金額作使用</p>
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 每次結賬只能使用一張禮卷</p>
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 禮卷有效期限均為一個月</p>
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 免費禮卷次數將於每月1號重置</p>
+            </div>
+            <div class="col-12 text-center mt-5">
+                <h2 class="spinner-text">禮卷須知</h2>
+            </div>
+            <div class="col-12">
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 消費滿$1300減$50</p>
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 消費滿$800 減$30</p>
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 滿費滿$500 減$20</p>
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 滿費滿$300 減$10</p>
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 滿費滿$100 減$5</p>
+                <p class="spinner-body-text"><img src="spinner/arrow-white.png" style="width: 30px; display: inline-block;"> 共五種精選禮卷等你拎！</p>
+            </div>
+            <div class="col-12 text-center">
+                <a href="spinner/index.php" class="btn add-to-cart" tabindex="0">Spin</a>
             </div>
         </div>
     </div>

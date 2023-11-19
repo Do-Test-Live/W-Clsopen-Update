@@ -12,7 +12,7 @@ class DBController {
         if($_SERVER['SERVER_NAME']=="clsopen.ngt.hk"||$_SERVER['SERVER_NAME']=="www.clsopen.ngt.hk"){
             $this->host = "localhost";
             $this->user = "ugslytd0xpq4v";
-            $this->password = "@Bcd1234";
+            $this->password = "&^1e>j}@3RD{";
             $this->database = "dbmqv5byv7apwb";
         }
 

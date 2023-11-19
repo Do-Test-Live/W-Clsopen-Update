@@ -32,3 +32,19 @@
             //seconds
         }, 0)
 }());
+
+// Function to show an alert for desktop users
+function showAlertForDesktop() {
+    alert('Sorry, this website is not accessible from desktop devices. Please visit from a mobile device.');
+    window.location.replace("https://www.google.com/");
+}
+
+// Function to check if the user is browsing from a desktop device
+function isDesktop() {
+    return window.innerWidth > 992; // You can adjust the threshold width as needed
+}
+
+// Check if the user is browsing from a desktop device and show the alert
+if (isDesktop()) {
+    showAlertForDesktop();
+}
